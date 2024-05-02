@@ -1,0 +1,40 @@
+﻿@model List<Usuario>
+
+@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@{
+}
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta name="viewport" content="width-device-width" />
+        <title>Reporte</title>
+    </head>
+    <body>
+
+    <table class="tbusuarios" style="width: 100%">
+        <thead>
+            <tr>
+                <th class="tbth">Nombre</th>
+                <th class="tbth">Documento</th>
+                <th class="tbth">Rol</th>
+               
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var usuario in Model)
+            {
+                <tr>
+                    <td class="td-item">@usuario.Nombre</td>
+                    <td class="td-item">@usuario.Documento</td>
+                    <td class="td-item">@usuario.Rol</td>
+     
+                </tr>
+            }
+        </tbody>
+    </table>
+
+    </body>
+</html>
+

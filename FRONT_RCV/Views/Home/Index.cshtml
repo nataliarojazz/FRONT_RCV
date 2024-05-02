@@ -1,0 +1,47 @@
+﻿@model List<Imagen>
+@{
+    ViewData["Title"] = "Home Page";
+}
+
+<div class="text-center">
+    <h1 class="display-4">LISTA USUARIOS</h1>
+</div>
+
+<a asp-controller="Pdf"
+   asp-action="ImprimirPDF"
+   asp-route-idusuario="1"
+   class="btn btn-info text-white">Imprimir PDF</a>
+
+
+<div class="card-header">
+    Lista Vehiculo
+</div>
+<div class="card-body">
+
+    <a asp-action="Imagen" asp-controller="Home" asp-route-IdUsuario="0" class="btn btn-primary btn-sm">Nuevo Usuario</a>
+    <hr />
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Documento</th>
+                <th>Imagen Vehiculo</th>
+                <th>Imagen Usuario</th>
+            </tr>
+        </thead>
+        <tbody>
+                @foreach (var item in Model)
+                {
+                    <tr>
+                        <td>@item.DocumentoU</td>
+                        <td>@item.ImagenV</td>
+                        <td>@item.ImagenU</td>
+                        <td>
+                            <a asp-action="Imagen" asp-controller="Home" asp-route-IdUsuario="@item.IdImagen" class="btn btn-primary btn-sm">Editar</a>
+                            <a asp-action="EliminarI" asp-controller="Home" asp-route-IdUsuario="@item.IdImagen" class="btn btn-danger btn-sm">Eliminar</a>
+                        </td>
+                    </tr>
+                }
+            }
+        </tbody>
+    </table>
+</div>

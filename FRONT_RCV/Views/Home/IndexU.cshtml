@@ -1,0 +1,62 @@
+﻿@model List<Usuario>
+@{
+    ViewData["Title"] = "Home Page";
+}
+
+<div class="text-center">
+    <h1 class="display-4">LISTA USUARIOS</h1>
+</div>
+
+<a asp-controller="Pdf"
+   asp-action="ImprimirPDF"
+   asp-route-idusuario="1"
+   class="btn btn-info text-white">Imprimir PDF</a>
+
+
+<div class="card-header">
+    Lista Usuarios
+</div>
+<div class="card-body">
+
+    <a asp-action="Usuario" asp-controller="Home" asp-route-IdUsuario="0" class="btn btn-primary btn-sm">Nuevo Usuario</a>
+    <hr />
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Nombre</th>
+                <th>Apellido</th>
+                <th>Telefono</th>
+                <th>Documento</th>
+                <th>Rol</th>
+            </tr>
+        </thead>
+        <tbody>
+                <tr>
+                <td>Juan</td>
+                <td>Perez</td>
+                <td>123456789</td>
+                <td>1234567890123</td>
+                <td>usuario</td>
+                </tr>
+            <tr>
+                <td>María</td>
+                <td>González</td>
+                <td>987654321</td>
+                <td>9876543210987</td>
+                <td>usuario</td>
+            </tr>
+            <tr>
+                <td>Carlos</td>
+                <td>López</td>
+                <td>555555555</td>
+                <td>5555555555555</td>
+                <td>usuario</td>
+            </tr>
+                    <td>
+                        <a asp-action="Imagen" asp-controller="Home" asp-route-IdUsuario="IdUsuario" class="btn btn-primary btn-sm">Editar</a>
+                        <a asp-action="EliminarI" asp-controller="Home" asp-route-IdUsuario="IdUsuario" class="btn btn-danger btn-sm">Eliminar</a>
+                    </td>
+                </tr>
+        </tbody>
+    </table>
+</div>
